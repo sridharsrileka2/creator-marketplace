@@ -1,0 +1,153 @@
+### Login
+POST http://localhost:8080/api/users/login
+Content-Type: application/json
+
+{
+    "email": "sri@example.com",
+    "password": "sri@12345"
+}
+### My Projects
+GET http://localhost:8080/api/projects/my
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzcmlAZXhhbXBsZS5jb20iLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzg5OTE3Mjg1LCJleHAiOjE3ODk5MjA4ODV9.JLPpVv8X1nkgCWuvrX6DbaIqLQyOo0uDYsDoFLBdgfeKGRv7AxD5_jwH01mif1yk
+###
+
+### Create Job
+POST http://localhost:8080/api/jobs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzcmlAZXhhbXBsZS5jb20iLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzg5OTE3Mjg1LCJleHAiOjE3ODk5MjA4ODV9.JLPpVv8X1nkgCWuvrX6DbaIqLQyOo0uDYsDoFLBdgfeKGRv7AxD5_jwH01mif1yk
+
+{
+    "title": "Video Editing Project",
+    "description": "Need a professional video editor for YouTube videos",
+    "requiredSkills": "Premiere Pro, After Effects",
+    "budget": 5000,
+    "deadline": "2026-10-15T18:00:00",
+    "status": "OPEN"
+}
+###
+
+### Get My Jobs
+GET http://localhost:8080/api/jobs/my
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzcmlAZXhhbXBsZS5jb20iLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzg5OTE3Mjg1LCJleHAiOjE3ODk5MjA4ODV9.JLPpVv8X1nkgCWuvrX6DbaIqLQyOo0uDYsDoFLBdgfeKGRv7AxD5_jwH01mif1yk
+###
+
+### Get Open Jobs
+GET http://localhost:8080/api/jobs/open
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzcmlAZXhhbXBsZS5jb20iLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzg5OTE3Mjg1LCJleHAiOjE3ODk5MjA4ODV9.JLPpVv8X1nkgCWuvrX6DbaIqLQyOo0uDYsDoFLBdgfeKGRv7AxD5_jwH01mif1yk
+###
+
+### Update Job
+PUT http://localhost:8080/api/jobs/3
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzcmlAZXhhbXBsZS5jb20iLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzg5OTE3Mjg1LCJleHAiOjE3ODk5MjA4ODV9.JLPpVv8X1nkgCWuvrX6DbaIqLQyOo0uDYsDoFLBdgfeKGRv7AxD5_jwH01mif1yk
+
+{
+    "title": "Professional Video Editing Project",
+    "description": "Need a professional video editor for YouTube and Instagram videos",
+    "requiredSkills": "Premiere Pro, After Effects, DaVinci Resolve",
+    "budget": 6000,
+    "deadline": "2026-10-20T18:00:00",
+    "status": "OPEN"
+}
+###
+
+### Delete Job
+DELETE http://localhost:8080/api/jobs/3
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzcmlAZXhhbXBsZS5jb20iLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzg5OTE3Mjg1LCJleHAiOjE3ODk5MjA4ODV9.JLPpVv8X1nkgCWuvrX6DbaIqLQyOo0uDYsDoFLBdgfeKGRv7AxD5_jwH01mif1yk
+###
+
+### Get My Jobs - Verify Delete
+GET http://localhost:8080/api/jobs/my
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzcmlAZXhhbXBsZS5jb20iLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzg5OTE3Mjg1LCJleHAiOjE3ODk5MjA4ODV9.JLPpVv8X1nkgCWuvrX6DbaIqLQyOo0uDYsDoFLBdgfeKGRv7AxD5_jwH01mif1yk
+###
+### Register Creator
+POST http://localhost:8080/api/users/register
+Content-Type: application/json
+
+{
+  "name": "Test Creator",
+  "email": "creator@example.com",
+  "password": "Creator@123",
+  "role": "CREATOR"
+}
+###
+### Creator Login
+POST http://localhost:8080/api/users/login
+Content-Type: application/json
+
+{
+  "email": "creator@example.com",
+  "password": "Creator@123"
+}
+###
+### Create Project - Creator
+POST http://localhost:8080/api/projects
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJjcmVhdG9yQGV4YW1wbGUuY29tIiwicm9sZSI6IkNSRUFUT1IiLCJpYXQiOjE3ODk5MTgxODEsImV4cCI6MTc4OTkyMTc4MX0.0VC9Hu_m_fvfshkCI5N6GLLs--7UXhp11iUfcLyz-kN6YvqAabWP6Ghx0UkM-Q_5
+
+{
+  "job": {
+    "jobId": 2
+  },
+  "title": "YouTube Video Editing Project",
+  "description": "Edit and deliver professional YouTube videos",
+  "agreedBudget": 5000,
+  "status": "IN_PROGRESS"
+}
+###
+### Get My Projects - Creator
+GET http://localhost:8080/api/projects/my
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJjcmVhdG9yQGV4YW1wbGUuY29tIiwicm9sZSI6IkNSRUFUT1IiLCJpYXQiOjE3ODk5MTgxODEsImV4cCI6MTc4OTkyMTc4MX0.0VC9Hu_m_fvfshkCI5N6GLLs--7UXhp11iUfcLyz-kN6YvqAabWP6Ghx0UkM-Q_5
+###
+### Get Project #1
+GET http://localhost:8080/api/projects/1
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJjcmVhdG9yQGV4YW1wbGUuY29tIiwicm9sZSI6IkNSRUFUT1IiLCJpYXQiOjE3ODk5MTgxODEsImV4cCI6MTc4OTkyMTc4MX0.0VC9Hu_m_fvfshkCI5N6GLLs--7UXhp11iUfcLyz-kN6YvqAabWP6Ghx0UkM-Q_5
+###
+### Update Project #1
+PUT http://localhost:8080/api/projects/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJjcmVhdG9yQGV4YW1wbGUuY29tIiwicm9sZSI6IkNSRUFUT1IiLCJpYXQiOjE3ODk5MTgxODEsImV4cCI6MTc4OTkyMTc4MX0.0VC9Hu_m_fvfshkCI5N6GLLs--7UXhp11iUfcLyz-kN6YvqAabWP6Ghx0UkM-Q_5
+
+{
+  "title": "Professional YouTube Video Editing Project",
+  "description": "Edit, enhance and deliver high-quality YouTube videos",
+  "agreedBudget": 6000,
+  "status": "IN_PROGRESS"
+}
+###
+### Delete Project #1
+DELETE http://localhost:8080/api/projects/1
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJjcmVhdG9yQGV4YW1wbGUuY29tIiwicm9sZSI6IkNSRUFUT1IiLCJpYXQiOjE3ODk5MTgxODEsImV4cCI6MTc4OTkyMTc4MX0.0VC9Hu_m_fvfshkCI5N6GLLs--7UXhp11iUfcLyz-kN6YvqAabWP6Ghx0UkM-Q_5
+###
+### Verify Project Delete
+GET http://localhost:8080/api/projects/my
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJjcmVhdG9yQGV4YW1wbGUuY29tIiwicm9sZSI6IkNSRUFUT1IiLCJpYXQiOjE3ODk5MTgxODEsImV4cCI6MTc4OTkyMTc4MX0.0VC9Hu_m_fvfshkCI5N6GLLs--7UXhp11iUfcLyz-kN6YvqAabWP6Ghx0UkM-Q_5
+### Test DTO Registration
+POST http://localhost:8080/api/users/register
+Content-Type: application/json
+
+{
+  "name": "DTO Test User",
+  "email": "dto-test@example.com",
+  "password": "Test@123",
+  "role": "CLIENT"
+}
+###
+### Test User DTO
+POST http://localhost:8080/api/users/register
+Content-Type: application/json
+
+{
+  "name": "DTO Test User 2",
+  "email": "dto-test2@example.com",
+  "password": "Test@123",
+  "role": "CLIENT"
+}
+###
+### Test Job DTO
+GET http://localhost:8080/api/jobs/my
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJjcmVhdG9yQGV4YW1wbGUuY29tIiwicm9sZSI6IkNSRUFUT1IiLCJpYXQiOjE3ODk5MTgxODEsImV4cCI6MTc4OTkyMTc4MX0.0VC9Hu_m_fvfshkCI5N6GLLs--7UXhp11iUfcLyz-kN6YvqAabWP6Ghx0UkM-Q_5
+###
+### Get Client Profile
+GET http://localhost:8080/api/users/profile
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJjcmVhdG9yQGV4YW1wbGUuY29tIiwicm9sZSI6IkNSRUFUT1IiLCJpYXQiOjE3ODk5MTgxODEsImV4cCI6MTc4OTkyMTc4MX0.0VC9Hu_m_fvfshkCI5N6GLLs--7UXhp11iUfcLyz-kN6YvqAabWP6Ghx0UkM-Q_5
