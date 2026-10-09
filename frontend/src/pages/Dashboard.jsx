@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
 function Dashboard() {
@@ -6,7 +7,6 @@ function Dashboard() {
       <Navbar />
 
       <div className="container py-5">
-
         <div className="text-center mb-5">
           <h1 className="fw-bold">
             Welcome to Creator Marketplace
@@ -19,31 +19,33 @@ function Dashboard() {
 
         <div className="row g-4">
 
+          {/* Create Job */}
           <div className="col-md-4">
             <div className="card shadow-sm h-100">
-              <div className="card-body text-center">
-
-                <h4 className="card-title">
+              <div className="card-body text-center p-4">
+                <h4 className="card-title mb-3">
                   Post a Job
                 </h4>
 
                 <p className="text-muted">
-                  Create a project and find the right creator.
+                  Create a job and find the right creator for your project.
                 </p>
 
-                <button className="btn btn-primary">
+                <Link
+                  to="/create-job"
+                  className="btn btn-primary"
+                >
                   Create Job
-                </button>
-
+                </Link>
               </div>
             </div>
           </div>
 
+          {/* View All Jobs */}
           <div className="col-md-4">
             <div className="card shadow-sm h-100">
-              <div className="card-body text-center">
-
-                <h4 className="card-title">
+              <div className="card-body text-center p-4">
+                <h4 className="card-title mb-3">
                   Find Jobs
                 </h4>
 
@@ -51,36 +53,39 @@ function Dashboard() {
                   Explore available creative opportunities.
                 </p>
 
-                <button className="btn btn-success">
+                <Link
+                  to="/jobs"
+                  className="btn btn-success"
+                >
                   View Jobs
-                </button>
-
+                </Link>
               </div>
             </div>
           </div>
 
+          {/* My Jobs */}
           <div className="col-md-4">
             <div className="card shadow-sm h-100">
-              <div className="card-body text-center">
-
-                <h4 className="card-title">
-                  My Projects
+              <div className="card-body text-center p-4">
+                <h4 className="card-title mb-3">
+                  My Jobs
                 </h4>
 
                 <p className="text-muted">
-                  Manage your ongoing and completed projects.
+                  View the jobs you have posted.
                 </p>
 
-                <button className="btn btn-dark">
-                  View Projects
-                </button>
-
+                <Link
+                  to="/my-jobs"
+                  className="btn btn-dark"
+                >
+                  View My Jobs
+                </Link>
               </div>
             </div>
           </div>
 
         </div>
-
       </div>
     </>
   );
